@@ -1,9 +1,16 @@
 //  javascript ----------------------
+const card = document.getElementById("card");
 const container = document.getElementById("container");
 const mainContainer = document.getElementById("mainContainer");
-const refarenceElement = container.firstChild
-console.log(refarenceElement)
+let mouseChecker = true;
+
 mainContainer.addEventListener("mousemove", (e) => {
+  if (mouseChecker) {
+    return;
+  }
+  console.log("message");
+
+  // console.log(mouseChecker);
   const span = document.createElement("span");
   let x = -75 + e.offsetX + "px";
   let y = -75 + e.offsetY + "px";
@@ -22,3 +29,13 @@ function clearSpan(element) {
     element.remove();
   }, 1200);
 }
+
+// console.log(cards);
+
+// card mouse enter and out ================
+card.addEventListener("mouseenter", () => {
+  mouseChecker = true;
+});
+card.addEventListener("mouseleave", () => {
+  mouseChecker = false;
+});
