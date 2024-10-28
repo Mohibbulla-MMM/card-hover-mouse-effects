@@ -1,0 +1,36 @@
+.box {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 80%;
+  /* height: 100%; */
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  /* background-color: red;   */
+  border: 1px solid red;
+  /* height: 10px; */
+  z-index: 10;
+  pointer-events: none;
+}
+.box .card-box {
+  display: flex;
+  /* flex-wrap: nowrap; */
+  /* justify-content: center; */
+  align-items: center;
+  gap: 30px;
+  pointer-events: all;
+  overflow-x: auto;
+  /* padding: 10px; */
+}
+.card-box .card {
+  height: 400px;
+  min-width: 250px;
+  background: #000;
+  /* pointer-events: all; */
+}
+
