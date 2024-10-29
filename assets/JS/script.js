@@ -1,41 +1,34 @@
 //  javascript ----------------------
 const card = document.getElementById("card");
-const container = document.getElementById("container");
 const mainContainer = document.getElementById("mainContainer");
-let mouseChecker = true;
+const containerSpan = document.getElementById("containerSpan");
+let mouseChecker = false;
 
 mainContainer.addEventListener("mousemove", (e) => {
   if (mouseChecker) {
     return;
   }
-  console.log("message");
+  // console.log("message");
+  containerSpan.style.display = "block";
 
-  // console.log(mouseChecker);
-  const span = document.createElement("span");
-  let x = -75 + e.offsetX + "px";
-  let y = -75 + e.offsetY + "px";
+  let x = -5 + e.offsetX + "px";
+  let y = -5 + e.offsetY + "px";
 
-  span.style.left = x;
-  span.style.top = y;
-  // span.style.left = `${x}px`;
-  // span.style.top = `${y}px`  ;
-
-  container.appendChild(span);
-  clearSpan(span);
+  containerSpan.style.left = x;
+  containerSpan.style.top = y;
 });
 
-function clearSpan(element) {
-  setTimeout(() => {
-    element.remove();
-  }, 1200);
-}
-
-// console.log(cards);
+mainContainer.addEventListener("mouseleave", (e) => {
+  containerSpan.style.display = "none";
+  console.log("leave");
+});
 
 // card mouse enter and out ================
 card.addEventListener("mouseenter", () => {
   mouseChecker = true;
+  containerSpan.style.display = "none";
 });
 card.addEventListener("mouseleave", () => {
   mouseChecker = false;
+  containerSpan.style.display = "block";
 });
